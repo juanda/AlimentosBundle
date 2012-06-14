@@ -1,0 +1,15 @@
+<table>
+      <tr>
+          <th>alimento (por 100g)</th>
+          <th>energía (Kcal)</th>
+          <th>grasa (g)</th>
+      </tr>
+      {% for alimento in alimentos %}
+      <tr>
+          <td>{{ alimento.nombre }}</td>
+          <td>{{ alimento.energia }}</td>
+          <td>{{ alimento.grasatotal }}</td>
+      </tr>
+      {% endfor %}
+
+  </table>

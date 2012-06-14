@@ -1,0 +1,33 @@
+{% extends 'JazzywebAulasMentorAlimentosBundle::layout.html.twig' %}
+
+ {% block contenido %}
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/>
+<form name="formInsertar" action="{{ path('JAMAB_insertar') }}" method="POST">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Energía (Kcal)</th>
+            <th>Proteina (g)</th>
+            <th>H. de carbono (g)</th>
+            <th>Fibra (g)</th>
+            <th>Grasa total (g)</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="nombre" value="{{ nombre }}" /></td>
+            <td><input type="text" name="energia" value="{{ energia }}" /></td>
+            <td><input type="text" name="proteina" value="{{ proteina }}" /></td>
+            <td><input type="text" name="hc" value="{{ hc }}" /></td>
+            <td><input type="text" name="fibra" value="{{ fibra }}" /></td>
+            <td><input type="text" name="grasa" value="{{ grasa }}" /></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="insertar" name="insertar" />
+</form>
+* Los valores deben referirse a 100 g del alimento
+
+{% endblock %}

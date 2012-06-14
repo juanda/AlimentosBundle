@@ -1,0 +1,24 @@
+{% extends 'JazzywebAulasMentorAlimentosBundle::layout.html.twig' %}
+
+  {% block contenido %}
+
+ <form name="formBusqueda" action="{{ path('JAMAB_buscar') }}" method="POST">
+
+      <table>
+          <tr>
+              <td>nombre alimento:</td>
+              <td><input type="text" name="nombre" value="{{ nombre }}">(puedes utilizar '%' como comodín)</td>
+
+              <td><input type="submit" value="buscar"></td>
+          </tr>
+      </table>
+
+      </table>
+
+  </form>
+
+  {% if resultado %}
+  {% include 'JazzywebAulasMentorAlimentosBundle:Default:_tablaAlimentos.html.twig' with {'alimentos': resultado} %}
+  {% endif %}
+
+ {% endblock %}
